@@ -1,0 +1,19 @@
+#!/usr/bin/java --source 11
+package com.javadi.newfeatures.java11.script;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+// first you need to make it executable:
+//      chmod +x listfiles
+// then you can simply run it:
+//      ./listfiles .
+public class listfiles {
+
+    public static void main(String[] args) throws IOException {
+        Files.walk(Paths.get(args[0]))
+                .forEach(System.out::println);
+    }
+
+}
